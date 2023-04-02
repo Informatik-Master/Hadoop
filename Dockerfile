@@ -8,15 +8,15 @@ RUN sudo apt-get update \
 WORKDIR /workspaces/graal-workshop
 RUN wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.1/graalvm-ce-java11-linux-amd64-22.3.1.tar.gz \
     && mkdir -p /usr/local/graalvm \
-    && tar -xvzf graalvm-ce-java11-linux-amd64-22.3.1.tar.gz -C /usr/local/graalvm \
+    && tar -xvzf graalvm-ce-java11-linux-amd64-22.3.1.tar.gz -C /usr/local/graalvm
 
 
 ENV JAVA_HOME="/usr/local/graalvm/graalvm-ce-java11-22.3.1"
 ENV PATH="/usr/local/graalvm/graalvm-ce-java11-22.3.1/bin:$PATH"
 ENV GRAALVM_HOME="/usr/local/graalvm/graalvm-ce-java11-22.3.1"
 
-RUN wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.5/hadoop-3.3.5.tar.gz
-RUN mkdir -p /usr/local/hadoop \
+RUN wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.5/hadoop-3.3.5.tar.gz \
+    && mkdir -p /usr/local/hadoop \
     && tar -xvzf hadoop-3.3.5.tar.gz -C /usr/local/hadoop
 ENV HADOOP_HOME="/usr/local/hadoop"
 ENV PATH="/usr/local/hadoop/bin:$PATH"
