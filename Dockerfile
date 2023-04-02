@@ -16,8 +16,8 @@ ENV PATH="/usr/local/graalvm/graalvm-ce-java11-22.3.1/bin:$PATH"
 ENV GRAALVM_HOME="/usr/local/graalvm/graalvm-ce-java11-22.3.1"
 
 RUN wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.5/hadoop-3.3.5.tar.gz
-RUN tar -xvzf hadoop-3.3.5.tar.gz -C /usr/local/hadoop/hadoop-3.3.5
-ENV HADOOP_HOME="/usr/local/hadoop/hadoop-3.3.5"
-ENV PATH="/usr/local/hadoop/hadoop-3.3.5/bin:$PATH"
+RUN tar -xvzf hadoop-3.3.5.tar.gz -C /usr/local/hadoop/hadoop
+ENV HADOOP_HOME="/usr/local/hadoop/hadoop"
+ENV PATH="/usr/local/hadoop/hadoop/bin:$PATH"
 
 ENV DEBIAN_FRONTEND=dialog
